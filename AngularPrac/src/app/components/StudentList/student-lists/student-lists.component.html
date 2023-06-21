@@ -1,0 +1,51 @@
+<div class="container my-6">
+    <h2 class="text-muted text-center">Student List</h2>
+
+<br>
+<table class="table table-bordered table-hover text-center" *ngIf="students && students.length>0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Std Name</th>
+            <th>Roll Num</th>
+            <th>Contact</th>
+            <th>Course</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Student of students">
+            <td>{{Student.autoId}}</td>
+            <td>{{Student.studentName}}</td>
+            <td>{{Student.rollNo}}</td>
+            <td>{{Student.contact}}</td>
+            <td>{{Student.course}}</td>
+            <td>{{Student.address}}</td>
+            <td><button class="btn btn-sm btn-primary">Edit</button> | <button class="btn btn-sm btn-danger">Delete</button></td>
+        </tr>
+        
+    </tbody>
+  </table>
+  <table class="table table-bordered table-hover text-center" *ngIf="!students || students.length <= 0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Std Name</th>
+            <th>Roll Num</th>
+            <th>Contact</th>
+            <th>Course</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        <tr >
+            <td colspan="7">No Student Found</td>
+        </tr>
+        
+    </tbody>
+  </table>
+  <!-- <p *ngIf="!student || student.length <= 0">No Student Found</p> -->
+</div>
